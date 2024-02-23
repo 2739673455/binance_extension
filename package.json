@@ -1,0 +1,57 @@
+{
+	"name": "binance",
+	"displayName": "binance",
+	"description": "btc",
+	"version": "0.0.1",
+	"publisher": "kodey",
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"icon": "binance.png",
+	"activationEvents": [
+		"onCommand"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "binance.markPrice",
+				"title": "btc"
+			}
+		],
+		"configuration": {
+			"title": "binance-price",
+			"properties": {
+				"binance.interval": {
+					"type": "number",
+					"default": 5000
+				},
+				"binance.coins": {
+					"type": "array",
+					"default": [],
+					"scope": "window"
+				}
+			}
+		},
+		"scripts": {
+			"lint": "eslint .",
+			"pretest": "npm run lint",
+			"test": "vscode-test"
+		},
+		"devDependencies": {
+			"@types/vscode": "^1.85.0",
+			"@types/mocha": "^10.0.6",
+			"@types/node": "18.x",
+			"eslint": "^8.56.0",
+			"typescript": "^5.3.3",
+			"@vscode/test-cli": "^0.0.4",
+			"@vscode/test-electron": "^2.3.8"
+		}
+	},
+	"__metadata": {
+		"installedTimestamp": 1705882548472
+	}
+}
